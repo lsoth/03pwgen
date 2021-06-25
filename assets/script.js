@@ -20,6 +20,8 @@ generateBtn.addEventListener("click", writePassword);
 // THEN I am presented with a series of prompts for password criteria
 // Create variables to determine what criteria the password will contain
 
+var emptyPassword = ("")
+
 var lowercase = ("abcdefghijklmnopqrstuvwxyz").split('')
 
 // var lowercasepw = lowercase.split('')
@@ -51,14 +53,57 @@ console.log(symbols)
 
 var numChar = prompt ("How long would you like your password to be? (Between 8 and 128 characters)");
 
-var yesLower = confirm ("Would you like lowercase characters?");
+console.log(numChar)
 
-var yesUpper = confirm ("Would you like UPPERCASE characters?");
+//Checks to make sure user chooses valid password length
+if (parseInt(numChar) >= 8 && parseInt(numChar) <= 128) {
 
-var yesSpecial = confirm ("Would you like special characters?");
+
+    var yesLower = confirm ("Would you like lowercase characters?");
+      if (yesLower) {
+        emptyPassword = emptyPassword.concat(lowercase)
+      }
+    console.log(yesLower)
+
+    var yesUpper = confirm ("Would you like UPPERCASE characters?");
+      if (yesUpper) {
+        emptyPassword = emptyPassword.concat(uppercase)
+      }
+    console.log(yesUpper)
+
+    var yesSymbols = confirm ("Would you like special characters?");
+      if (yesSymbols) {
+        emptyPassword = emptyPassword.concat(symbols) 
+        console.log(emptyPassword)
+      }
+      
+    } else alert("Invalid number of characters, or invalid selection refresh page to try again!")
+    
+    // console.log(emptyPassword.concat(lowercase))
+    //TODO: Take the confirms and combine into holder and randomize using using Math.floor, and Math.random
+    
+    console.log(emptyPassword)
 
 
-//TODO: Take the confirms and combine into holder and randomize using using math.Floor, and math.Random
+// var choices = lowercase.concat
+
+// if (yesLower) {
+//   emptyPassword.concat(lowercase)
+// }
+
+// if (yesUpper) {
+//   emptyPassword.concat(uppercase)
+// }
+
+// if (yesSymbols) {
+//   emptyPassword.concat(symbols)
+// }
+// console.log(lowercase)
+
+
+var pwBin = Math.floor(Math.random() * choices.numChar)
+
+
 
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
