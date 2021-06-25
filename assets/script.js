@@ -20,7 +20,7 @@ generateBtn.addEventListener("click", writePassword);
 // THEN I am presented with a series of prompts for password criteria
 // Create variables to determine what criteria the password will contain
 
-var emptyPassword =""
+var passwordStorage =""
 
 var lowercase ="abcdefghijklmnopqrstuvwxyz"
 
@@ -64,40 +64,46 @@ var numChar = prompt ("How long would you like your password to be? (Between 8 a
 
       var yesLower = confirm ("Would you like lowercase characters?");
         if (yesLower) {
-          // emptyPassword = emptyPassword.concat(lowercase)
-          randomLower = Math.floor(Math.random() * lowercase.length);
-          console.log(lowercase.charAt(randomLower));
+          passwordStorage = passwordStorage.concat(lowercase)
+          // randomLower = Math.floor(Math.random() * lowercase.length);
+          // console.log(lowercase.charAt(randomLower));
         }
         
         var yesUpper = confirm ("Would you like UPPERCASE characters?");
         if (yesUpper) {
-          // emptyPassword = emptyPassword.concat(uppercase)
-          randomUpper = Math.floor(Math.random() * uppercase.length);
-          console.log(uppercase.charAt(randomUpper));
+          passwordStorage = passwordStorage.concat(uppercase)
+          // randomUpper = Math.floor(Math.random() * uppercase.length);
+          // console.log(uppercase.charAt(randomUpper));
         }
         
         var yesSymbols = confirm ("Would you like special characters?");
         if (yesSymbols) {
-          // emptyPassword = emptyPassword.concat(symbols) 
-          randomSymbols = Math.floor(Math.random() * symbols.length);
-          console.log(symbols.charAt(randomSymbols));
+         passwordStorage = passwordStorage.concat(symbols) 
+          // randomSymbols = Math.floor(Math.random() * symbols.length);
+          // console.log(symbols.charAt(randomSymbols));
+        }
+
+        var yesNumbers = confirm ("Would you like numbers?");
+        if (yesNumbers) {
+          passwordStorage = passwordStorage.concat(numbers)
         }
         
       } else alert("Invalid number of characters, or invalid selection refresh page to try again!")
     
+console.log(passwordStorage);
 //TODO: Take the confirms and combine into holder and randomize using using Math.floor, and Math.random
 
-// console.log(emptyPassword)
 
+  var userPassword = []
   for (let i = 0; i < parseInt(numChar); i++) {
-    // var randomNum = Math.floor(Math.random() * emptyPassword.length)
+    var randomNum = Math.floor(Math.random() * passwordStorage.length)
 
-    var userPassword = passwordStorage
+    userPassword.push(passwordStorage.charAt(randomNum))
     
   }
 
-return userPassword
-  }
+return userPassword.join('')
+}
 // var choices = lowercase.concat
 
 // if (yesLower) {
