@@ -20,31 +20,33 @@ generateBtn.addEventListener("click", writePassword);
 // THEN I am presented with a series of prompts for password criteria
 // Create variables to determine what criteria the password will contain
 
-var emptyPassword = ("")
+var emptyPassword =""
 
-var lowercase = ("abcdefghijklmnopqrstuvwxyz").split('')
+var lowercase ="abcdefghijklmnopqrstuvwxyz"
+
+//var lowercase = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","w","x","y","z")
 
 // var lowercasepw = lowercase.split('')
 
-console.log(lowercase)
+// console.log(lowercase)
 
-var uppercase = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").split('')
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 // var uppercasePw = uppercase.split("")
 
-console.log(uppercase)
+// console.log(uppercase)
 
-var numbers = ("0123456789").split('')
+var numbers = "0123456789"
 
 // var numbersPw = numbers.split("")
 
-console.log(numbers)
+// console.log(numbers)
 
-var symbols = ("~`! @#$%^&*()_-+={[}]|;'<,>.?/").split('') 
+var symbols = ("~`! @#$%^&*()_-+={[}]|;'<,>.?/") 
 
 // var symbolsPw = symbols.split("")
 
-console.log(symbols)
+// console.log(symbols)
 
 
 //TODO: Set up series of prompts or alerts that confirms for numbers, upper or lower
@@ -54,7 +56,7 @@ console.log(symbols)
 function generatePassword() {
 var numChar = prompt ("How long would you like your password to be? (Between 8 and 128 characters)");
 
-console.log(numChar)
+// console.log(numChar)
 
 //Checks to make sure user chooses valid password length
   if (parseInt(numChar) >= 8 && parseInt(numChar) <= 128) {
@@ -62,30 +64,39 @@ console.log(numChar)
 
       var yesLower = confirm ("Would you like lowercase characters?");
         if (yesLower) {
-          emptyPassword = emptyPassword.concat(lowercase)
+          // emptyPassword = emptyPassword.concat(lowercase)
+          randomLower = Math.floor(Math.random() * lowercase.length);
+          console.log(lowercase.charAt(randomLower));
         }
-
-      var yesUpper = confirm ("Would you like UPPERCASE characters?");
+        
+        var yesUpper = confirm ("Would you like UPPERCASE characters?");
         if (yesUpper) {
-          emptyPassword = emptyPassword.concat(uppercase)
+          // emptyPassword = emptyPassword.concat(uppercase)
+          randomUpper = Math.floor(Math.random() * uppercase.length);
+          console.log(uppercase.charAt(randomUpper));
         }
-
-      var yesSymbols = confirm ("Would you like special characters?");
+        
+        var yesSymbols = confirm ("Would you like special characters?");
         if (yesSymbols) {
-          emptyPassword = emptyPassword.concat(symbols) 
+          // emptyPassword = emptyPassword.concat(symbols) 
+          randomSymbols = Math.floor(Math.random() * symbols.length);
+          console.log(symbols.charAt(randomSymbols));
         }
         
       } else alert("Invalid number of characters, or invalid selection refresh page to try again!")
     
 //TODO: Take the confirms and combine into holder and randomize using using Math.floor, and Math.random
 
-console.log(emptyPassword)
-  for (let i = 0; i < emptyPassword.length; i++) {
-    const element = array[i];
+// console.log(emptyPassword)
+
+  for (let i = 0; i < parseInt(numChar); i++) {
+    // var randomNum = Math.floor(Math.random() * emptyPassword.length)
+
+    var userPassword = passwordStorage
     
   }
 
-return emptyPassword
+return userPassword
   }
 // var choices = lowercase.concat
 
