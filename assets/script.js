@@ -15,44 +15,29 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// GIVEN I need a new, secure password
-// TODO: WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// Create variables to determine what criteria the password will contain
+//creating an empty string to store password strings!
 
 var passwordStorage =""
 
 var lowercase ="abcdefghijklmnopqrstuvwxyz"
 
-//var lowercase = ("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","r","s","t","u","v","w","x","y","z")
-
-// var lowercasepw = lowercase.split('')
-
 // console.log(lowercase)
 
 var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-// var uppercasePw = uppercase.split("")
 
 // console.log(uppercase)
 
 var numbers = "0123456789"
 
-// var numbersPw = numbers.split("")
 
 // console.log(numbers)
 
-var symbols = ("~`! @#$%^&*()_-+={[}]|;'<,>.?/") 
+var symbols = ("~` !@#$%^&*()_-+={[}]|;'<,>.?/") 
 
-// var symbolsPw = symbols.split("")
 
 // console.log(symbols)
 
-
-//TODO: Set up series of prompts or alerts that confirms for numbers, upper or lower
-//case characters or special characters that the user decides, use conditional statements
-// to make sure at least one statement is chosen
-
+// function used to generate password given user inputs on the confirms and on answer to the prompt!
 function generatePassword() {
 var numChar = prompt ("How long would you like your password to be? (Between 8 and 128 characters)");
 
@@ -90,9 +75,10 @@ var numChar = prompt ("How long would you like your password to be? (Between 8 a
         
       } else alert("Invalid number of characters, or invalid selection refresh page to try again!")
     
-console.log(passwordStorage);
-//TODO: Take the confirms and combine into holder and randomize using using Math.floor, and Math.random
+// console.log(passwordStorage);
 
+//Take the confirms and combine into holder and randomize using using Math.floor, and Math.random,
+//grabs random choices in user password array
 
   var userPassword = []
   for (let i = 0; i < parseInt(numChar); i++) {
@@ -102,38 +88,8 @@ console.log(passwordStorage);
     
   }
 
+//Turns the array into a string
+
 return userPassword.join('')
 }
-// var choices = lowercase.concat
-
-// if (yesLower) {
-//   emptyPassword.concat(lowercase)
-// }
-
-// if (yesUpper) {
-//   emptyPassword.concat(uppercase)
-// }
-
-// if (yesSymbols) {
-//   emptyPassword.concat(symbols)
-// }
-// console.log(lowercase)
-
-
-
-
-
-
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
 
